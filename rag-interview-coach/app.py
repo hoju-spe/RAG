@@ -22,7 +22,7 @@ load_dotenv()
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 CHROMA_PATH = os.getenv("CHROMA_PATH", "./chroma_db")
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "interview_data")
-SAMPLE_DATA_PATH = os.getenv("TRAINING_DATA_PATH", "data/sample_training_data.jsonl")
+SAMPLE_DATA_PATH = os.getenv("TRAINING_DATA_PATH", "data/sample_training_data_50.jsonl")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 example_collection = get_collection(CHROMA_PATH, COLLECTION_NAME)

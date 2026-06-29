@@ -51,6 +51,7 @@ rag-interview-coach/
     sentiment_analyzer.py
   data/
     sample_training_data.jsonl
+    sample_training_data_50.jsonl
     interview_questions_top100.txt
 ```
 
@@ -105,7 +106,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-4o-mini
 CHROMA_PATH=./chroma_db
 COLLECTION_NAME=interview_data
-TRAINING_DATA_PATH=data/sample_training_data.jsonl
+TRAINING_DATA_PATH=data/sample_training_data_50.jsonl
 ```
 
 ### 4. 앱 실행
@@ -124,7 +125,7 @@ python app.py
 
 ### 6. 샘플 데이터 저장
 
-앱 화면에서 `샘플 데이터 ChromaDB 저장` 버튼을 먼저 누르면 `data/sample_training_data.jsonl`의 예시 데이터가 ChromaDB에 저장됩니다.
+앱 화면에서 `샘플 데이터 ChromaDB 저장` 버튼을 먼저 누르면 `data/sample_training_data_50.jsonl`의 기본 STAR 답변 사례 50개가 ChromaDB에 저장됩니다.
 
 ## 면접 질문 TOP100 기반 데이터 생성
 
