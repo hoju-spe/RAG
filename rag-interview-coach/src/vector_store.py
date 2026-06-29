@@ -1,3 +1,4 @@
+import argparse
 import json
 from pathlib import Path
 
@@ -65,6 +66,20 @@ def seed_vector_store(
     return len(ids)
 
 
-if __name__ == "__main__":
-    count = seed_vector_store()
+def main():
+    parser = argparse.ArgumentParser(description="Seed ChromaDB with interview RAG training data.")
+    parser.add_argument("jsonl_path", nargs="?", default="data/sample_training_data.jsonl")
+    parser.add_argument("--chroma-path", default="./chroma_db")
+    parser.add_argument("--collection-name", default="interview_data")
+    args = parser.parse_args()
+
+    count = seed_vector_store(
+        jsonl_path=args.jsonl_path,
+        chroma_path=args.chroma_path,
+        collection_name=args.collection_name,
+    )
     print(f"{count} examples saved to ChromaDB.")
+
+
+if __name__ == "__main__":
+    main()

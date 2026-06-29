@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 chroma_db/
 .ipynb_checkpoints/
+data/training_data_generated.jsonl
+data/crawled_questions.txt
