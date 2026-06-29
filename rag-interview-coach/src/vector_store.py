@@ -18,7 +18,7 @@ def get_collection(
 
 def load_jsonl(path: str) -> list[dict]:
     data_path = Path(path)
-    with data_path.open("r", encoding="utf-8") as file:
+    with data_path.open("r", encoding="utf-8-sig") as file:
         return [json.loads(line) for line in file if line.strip()]
 
 
